@@ -134,7 +134,7 @@ while ((len(free_fields))>0):
 else:
     print("Cat's Game. Meow!!")
 
-
+display_board(board)
 print("That' all folks! Thanks for playing!")
 
 
