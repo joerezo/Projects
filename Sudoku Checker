@@ -1,0 +1,192 @@
+'''
+Scenario
+As you probably know, Sudoku is a number-placing puzzle played on a 9x9 board. The player has to fill the board in a very specific way:
+
+each row of the board must contain all digits from 0 to 9 (the order doesn't matter)
+each column of the board must contain all digits from 0 to 9 (again, the order doesn't matter)
+each of the nine 3x3 "tiles" (we will name them "sub-squares") of the table must contain all digits from 0 to 9.
+If you need more details, you can find them here.
+
+Your task is to write a program which:
+
+reads 9 rows of the Sudoku, each containing 9 digits (check carefully if the data entered are valid)
+outputs Yes if the Sudoku is valid, and No otherwise.
+Test your code using the data we've provided.
+
+Test data
+Sample input:
+
+295743861
+431865927
+876192543
+387459216
+612387495
+549216738
+763524189
+928671354
+154938672
+Sample output:
+
+Yes
+
+'''
+##This is an INVALID input
+##SampleInput='''195743862
+#431865927
+#876192543
+#387459216
+#612387495
+#549216738
+#763524189
+#928671354
+#254938671'''
+
+
+
+
+
+##This is Valid input
+SampleInput="""295743861
+431865927
+876192543
+387459216
+612387495
+549216738
+763524189
+928671354
+154938672"""
+
+compareList=['1','2','3','4','5','6','7','8','9']
+SampleInput=SampleInput.splitlines()
+##['295743861', '431865927', '876192543', '387459216', '612387495', '549216738', '763524189', '928671354', '154938672']
+
+def toChar(strings):
+    charList=[]
+    for i in range(0,9):
+        charList.append(strings[i:i+1])
+    return charList
+
+def checkIfValid(charList, testList):
+    charList=sorted(charList)
+    compareList=sorted(testList)
+    count=0
+    for i in range(0,9):
+        if (compareList[i]==charList[i]):
+           count+=1
+        else:
+            continue
+    if count==9:
+        #print("Valid Entry")        
+        return True
+    else:
+        print("Invalid")
+        return False
+"""
+def checkIfValid(charList):
+    count=0
+    total=0
+    for i in compareList:
+        if i in charList:
+            count+=1
+            total+=int(i)
+        else:
+            print("NOT A SODUKO")
+
+    if count==9 and total==45:
+        print("Valid Entry")        
+        return True
+    else:
+        print("Invalid")
+        return False
+"""
+def RowChecker(SampleInput):
+    validRows=0
+    for string in SampleInput:
+        charList=toChar(string)
+        if (checkIfValid(charList,compareList)):
+            validRows+=1
+    if validRows==9:
+        print("All rows are Valid")
+        return True
+    else:
+        print("SubSquares are invalid")
+        return False
+    
+
+def columnList(SampleInput,columnNumber):
+    column=[]
+    for i in SampleInput:
+        column.append(i[columnNumber])
+    return column
+
+def ColumnChecker(SampleInput):
+    validColumns=0
+    for j in range(0,9):
+        if (checkIfValid(columnList(SampleInput,j),compareList)):
+            validColumns+=1
+    if validColumns==9:
+        print("All columns are valid")
+        return True
+    else:
+        print("SubSquares are invalid")
+        return False
+
+def subSquareGenerator(SampleInput, rowBegin, rowEnd,colBegin,colEnd):
+    subSquareList=[]
+    for i in range(rowBegin,rowEnd):
+        for j in range(colBegin,colEnd):
+            subSquareList.append(SampleInput[i][j:j+1])
+    return subSquareList
+
+def SubSquareChecker(SampleInput):
+    validSubSquare=0
+    for subSquare in SampleInput:
+        if (checkIfValid(subSquare, compareList)):
+            validSubSquare+=1
+    if validSubSquare==9:
+        print("All subsquares are Valid")
+        return True
+    else:
+        print("SubSquares are invalid")
+        return False
+
+def OverAllGame(Rows, Columns, Subsquare):
+    if Rows and Columns and Subsquare:
+        print("You Won Soduko")
+    else:
+        print("There was a error in your ways")
+    
+square1=subSquareGenerator(SampleInput, 0,3,0,3)
+square2=subSquareGenerator(SampleInput, 3,6,0,3)
+square3=subSquareGenerator(SampleInput, 6,9,0,3)
+square4=subSquareGenerator(SampleInput, 0,3,3,6)
+square5=subSquareGenerator(SampleInput, 3,6,3,6)
+square6=subSquareGenerator(SampleInput, 6,9,3,6)
+square7=subSquareGenerator(SampleInput, 0,3,6,9)
+square8=subSquareGenerator(SampleInput, 3,6,6,9)
+square9=subSquareGenerator(SampleInput, 6,9,6,9)
+
+
+subSquareList=[]
+subSquareList.append(square1)
+subSquareList.append(square2)
+subSquareList.append(square3)
+subSquareList.append(square4)
+subSquareList.append(square5)
+subSquareList.append(square6)
+subSquareList.append(square7)
+subSquareList.append(square8)
+subSquareList.append(square9)
+
+
+'''
+SubSquareChecker(subSquareList)
+RowChecker(SampleInput)
+ColumnChecker(SampleInput)
+'''
+
+OverAllGame(SubSquareChecker(subSquareList),RowChecker(SampleInput),ColumnChecker(SampleInput))
+       
+                   
+                   
+        
