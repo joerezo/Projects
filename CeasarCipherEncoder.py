@@ -1,4 +1,5 @@
 '''
+I really enjoy writing secret messages to my kids with this. They know how to decode it even when I don't give them the key!
 
 Your task is to write a program which:
 
