@@ -7,7 +7,7 @@ This Repository contains some challenge questions I encountered in Python Entry 
 
 For example, for these visualizations, I webscraped data from the __National Oceanic Atmospheric Administration__ sensors in the Pacific Ocean. I then cleaned the data, and merged it with 8 years of organic data on water visibility in the locals. I had to transform both datasets to make sure I could run a model on it.
 
-Initially, I wanted to use ML.NET, but I did not have enough rows for ML.NET to function, so I used Python scikit learn to run a linear regression model. Once I verified my code worked in generating a model, I experimented with various features to determine the optimal time frame to forecast, as well as which features had the greatest effect.
+Initially, I wanted to use ML.NET, but I did not have enough rows for ML.NET to function (NOAA data for the specific sensor only went back until 2013, while mine went back to 2007. I had to get rid of about 300 rows leaving 400 to train with), so I used Python scikit learn to run a linear regression model. Once I verified my code worked in generating a model, I experimented with various features to determine the optimal time frame to forecast, as well as which features had the greatest effect.
 
 This project, The Jolly, is currently private on GITHUB (as I have alot left I want to develop/pursue) but here is some of my findings:
 
