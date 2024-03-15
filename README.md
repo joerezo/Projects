@@ -14,4 +14,20 @@ This is a visualization of all of my features at once to verify I could generate
 ![TheJolly_1hrData](https://github.com/joerezo/Projects/assets/50391987/0125d67b-77d2-4775-871d-60a5285b1f0b)
 
 This feature is more useable, but the r^2 value is still low, but from the added data from NOAA, was one of my better features. This finding also re-affirmed that I need to find other external open source data to add as features to create a better model. The search continues!
+
 ![TheJolly](https://github.com/joerezo/Projects/assets/50391987/6f5cac01-0a99-4f99-897a-38b79f456d3f)
+
+#Unity
+Other projects include learning how to use Unity. Even though it is a game development tool, I wanted to learn about it as "Unity is used for creating simulations in fields such as training, education, and research. Flight simulators, medical training modules, and physics simulations benefit from Unity’s robust engine." The Physics Major in me thoroughly enjoyed seeing physics applied in the game development!
+
+The first video is of rigid body events before I made the boxes trigger events to be collected. Words like rigid body, kinematics, vectors are regularly used in Unity. The second video is the completed game.
+
+https://github.com/joerezo/Projects/assets/50391987/b9713511-4749-441f-861d-8c4ecf315a44
+
+Completed Game:
+
+
+
+https://github.com/joerezo/Projects/assets/50391987/31c6e850-19f8-4b95-95f7-6078cb407713
+
+
