@@ -5,7 +5,14 @@
 
 This Repository contains some challenge questions I encountered in Python Entry Praticitioner courses as well as Projects that are on going that I do not yet want to reveal the datasets for. 
 
-For example, for these visualizations, I webscraped data from the __National Oceanic Atmospheric Administration__ sensors in the Pacific Ocean. I then cleaned the data, and merged it with 8 years of organic data on water visibility in the locals. I had to transform both datasets to make sure I could run a model on it.
+My most recent project is a mobile application built with .NET MAUI that puts the visualizations and insights gained from below, into something I plan on using. My app predicts water visibility and provides a mechanism to record fish observations based on depth. He is a video of the app on an android emulator. The predictions are made with API calls and running through my model. API Calls are mostly on hte conditions page.
+
+https://github.com/joerezo/Projects/assets/50391987/1eb7aeca-b160-43dc-b315-785fb356e618
+
+
+
+
+For example, for these visualizations, I gathered data from the __National Oceanic Atmospheric Administration__ sensors in the Pacific Ocean. I then cleaned the data, and merged it with 8 years of organic data on water visibility in the locals. I had to transform both datasets to make sure I could run a model on it.
 
 Initially, I wanted to use ML.NET, but I did not have enough rows for ML.NET to function (NOAA data for the specific sensor only went back until 2013, while mine went back to 2007. I had to get rid of about 300 rows leaving 400 to train with), so I used Python scikit learn to run a linear regression model. Once I verified my code worked in generating a model, I experimented with various features to determine the optimal time frame to forecast, as well as which features had the greatest effect.
 
